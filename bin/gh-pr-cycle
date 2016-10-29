@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+'use strict';
+
+let main = require('../main').main;
+let argv = require('optimist')
+    .boolean("all")
+    .argv;
+
+let dest = argv._[0].split("/");
+
+let owner = dest[0];
+let repo = dest[1];
+
+if (!owner || !repo) {
+    return;
+}
+
+const target = {
+    owner: owner,
+    repo: repo,
+    state: argv.all ? "all" : null,
+}
+
+main(target);
