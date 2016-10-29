@@ -9,6 +9,7 @@
   "author": "yasuhiroki",
   "license": "MIT",
   "dependencies": {
-    "github": "^5.0.0"
+    "github": "^5.0.0",
+    "optimist": "^0.6.1"
   }
 }
