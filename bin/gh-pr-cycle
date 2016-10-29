@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-let main = require('../main').main;
+let main = require('../lib/').main;
 let argv = require('optimist')
     .boolean("all")
     .argv;
