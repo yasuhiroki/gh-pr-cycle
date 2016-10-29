@@ -1,0 +1,14 @@
+{
+  "name": "gh-pr-cycle",
+  "version": "0.0.1",
+  "description": "GitHub Pull Request Cycle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yasuhiroki",
+  "license": "MIT",
+  "dependencies": {
+    "github": "^5.0.0"
+  }
+}
