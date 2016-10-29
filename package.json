@@ -3,11 +3,19 @@
   "version": "0.0.1",
   "description": "GitHub Pull Request Cycle",
   "main": "index.js",
+  "bin": "./bin/gh-pr-cycle",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/yasuhiroki/gh-pr-cycle.git"
+  },
   "author": "yasuhiroki",
   "license": "MIT",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "dependencies": {
     "github": "^5.0.0",
     "optimist": "^0.6.1"
