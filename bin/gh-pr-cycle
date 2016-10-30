@@ -4,6 +4,7 @@
 let main = require('../lib/').main;
 let argv = require('optimist')
     .boolean("all")
+    .string("token")
     .argv;
 
 let dest = argv._[0].split("/");
@@ -19,6 +20,11 @@ const target = {
     owner: owner,
     repo: repo,
     state: argv.all ? "all" : null,
-}
+};
 
-main(target);
+const auth = {
+    type: argv.token ? "token" : null,
+    token: argv.token ? argv.token : null,
+};
+
+main(target, auth);
