@@ -2,18 +2,25 @@
 'use strict';
 
 let main = require('../lib/').main;
-let argv = require('optimist')
+let optimist = require('optimist')
+    .usage("gh-pr-cycle <--all> <--token TOKEN> user/repo")
     .boolean("all")
+    .describe("all", "Show open/closed pull request")
     .string("token")
-    .argv;
+    .describe("token", "Use GitHub Person token")
+    ;
+let argv = optimist.argv;
+
+if (argv.help || !argv._[0]) {
+    return optimist.showHelp();
+}
 
 let dest = argv._[0].split("/");
-
 let owner = dest[0];
 let repo = dest[1];
 
 if (!owner || !repo) {
-    return;
+    return optimist.showHelp();
 }
 
 const target = {
@@ -22,9 +29,10 @@ const target = {
     state: argv.all ? "all" : null,
 };
 
-const auth = {
-    type: argv.token ? "token" : null,
-    token: argv.token ? argv.token : null,
-};
+const auth = {}
+if (argv.token) {
+    auth.type = argv.token ? "token" : null;
+    auth.token = argv.token ? argv.token : null;
+}
 
 main(target, auth);
