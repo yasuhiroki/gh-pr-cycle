@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+'use strict';
+
+let main = require('../lib/').main;
+let argv = require('optimist')
+    .boolean("all")
+    .string("token")
+    .argv;
+
+let dest = argv._[0].split("/");
+
+let owner = dest[0];
+let repo = dest[1];
+
+if (!owner || !repo) {
+    return;
+}
+
+const target = {
+    owner: owner,
+    repo: repo,
+    state: argv.all ? "all" : null,
+};
+
+const auth = {
+    type: argv.token ? "token" : null,
+    token: argv.token ? argv.token : null,
+};
+
+main(target, auth);
