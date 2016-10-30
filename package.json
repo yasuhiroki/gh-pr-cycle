@@ -1,6 +1,6 @@
 {
   "name": "gh-pr-cycle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GitHub Pull Request Cycle",
   "main": "index.js",
   "bin": "./bin/gh-pr-cycle",
