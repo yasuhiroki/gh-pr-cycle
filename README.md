@@ -38,7 +38,7 @@ $ gh-pr-cycle --all {user}/{repo}
 Use GitHub Personal Token.
 
 ```bash
-$ gh-pr-cycle --token 'Your Persion Token' {user}/{repo}
+$ gh-pr-cycle --token 'Your Personal Token' {user}/{repo}
 ```
 
 
